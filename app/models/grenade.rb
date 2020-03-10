@@ -78,21 +78,32 @@ class Grenade
         end
         # excluded from display
         # [(y + 1), (y - 1)] && [(x + 3), (x - 3)]
+        # [(y + 2), (y - 2)] && [(x + 2), (x - 2)]
         x_coords_1.each do |x_c|
             y_coords_2.each do |y_c|
                 third << {y_coord: y_c, x_coord: x_c}
             end
         end
 
+        x_coords_2.each do |x_c|
+            y_coords_3.each do |y_c|
+                third << {y_coord: y_c, x_coord: x_c}
+            end
+        end
+
+
         minus_out_of_bounds = third.reject do |coords|
             coords[:y_coord] < 0 || coords[:y_coord] > 24 || coords[:x_coord] < 1 || coords[:x_coord] > 40
         end
 
         self.third_blast_coordinates = minus_out_of_bounds
-
-        self.third_no_invisible_coords = minus_out_of_bounds.reject do |coords|
-            [(y + 1), (y-1)].include?(coords[:y_coord]) == true && [(x + 3), (x - 3)].include?(coords[:x_coord])
+        
+        exclude_invisible = minus_out_of_bounds.reject do |coords|
+            [(y + 1), (y - 1)].include?(coords[:y_coord]) == true && [(x + 3), (x - 3)].include?(coords[:x_coord]) == true ||
+            [(y + 2), (y - 2)].include?(coords[:y_coord]) == true && [(x + 2), (x - 2)].include?(coords[:x_coord]) == true
         end
+
+        self.third_no_invisible_coords = exclude_invisible
     end
 
     

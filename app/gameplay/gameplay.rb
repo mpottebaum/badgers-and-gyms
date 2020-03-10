@@ -49,7 +49,7 @@ def gameplay(user, game, num_badgers)
     running_score = game.score
     game.update(score: (running_score + user.points))
     prompt.say("Score: #{game.score}")
-    prompt.select("Press Enter to continue", ["Continue"])
+    prompt.select("Press Enter to continue", ["Continue"], help: "")
 end
 
 def intro(num_badgers)

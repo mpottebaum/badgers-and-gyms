@@ -1,6 +1,8 @@
 def full_game
     prompt = prompt_instance
 
+    instructions
+
     game = Game.create(score: 0)
     game.lost = false
     user = User.new
@@ -46,4 +48,27 @@ def display_high_scores
     Game.high_scores.each do |game|
         puts "#{game.user_name} - #{game.score}"
     end
+end
+
+def instructions
+    prompt = prompt_instance
+    system "clear"
+    prompt.say("Welcome to")
+    prompt.ok("BADGERS AND GYMS")
+    sleep(2)
+    system "clear"
+    prompt.say("HOW TO PLAY:")
+    prompt.say("\n")
+    prompt.say("Badgers -> %")
+    prompt.say("You -> &")
+    prompt.say("\n")
+    prompt.say("You can escape from the gym through the exit at the top")
+    prompt.say("Or you can kill all of the badgers")
+    prompt.say("\n")
+    prompt.say("Throw grenades to kill the badgers")
+    prompt.say("Save your bullets for close-range combat")
+    prompt.say("\n")
+    prompt.say("The badger apocalypse is upon you")
+    prompt.say("\n")
+    prompt.select("Godspeed", ["Continue"], help: "Press ENTER to continue")
 end
