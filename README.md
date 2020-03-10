@@ -1,4 +1,4 @@
-# badgers-and-gyms
+# Badgers And Gyms
 The badger apocalypse is upon you
 
 
