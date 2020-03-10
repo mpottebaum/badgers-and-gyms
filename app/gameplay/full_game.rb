@@ -68,7 +68,20 @@ def instructions
     prompt.say("Throw grenades to kill the badgers")
     prompt.say("Save your bullets for close-range combat")
     prompt.say("\n")
-    prompt.say("The badger apocalypse is upon you")
+    prompt.say("To throw a grenade, first select the direction of the throw")
+    prompt.say("represented by degrees relative to your position:")
     prompt.say("\n")
+    puts "            315  0  45"
+    puts "               \\ | /"
+    puts "                \\|/"
+    puts "          270 -- & -- 90"
+    puts "                /|\\"
+    puts "               / | \\"
+    puts "           225  180  135"
+    prompt.say("\n")
+    prompt.say("Then select a power level from one to three")
+    prompt.say("\n")
+    prompt.say("\n")
+    prompt.say("The badger apocalypse is upon you")
     prompt.select("Godspeed", ["Continue"], help: "Press ENTER to continue")
 end

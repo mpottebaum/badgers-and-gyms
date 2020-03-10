@@ -19,5 +19,19 @@ Throw grenades to kill the badgers
 Save your bullets for close-range combat
 
 
+To throw a grenade, first select the direction of the throw
+represented by degrees relative to your position:
 
-Created using Ruby, ActiveRecord, and TTY::Prompt
+                  315  0  45
+                     \ | /
+                      \|/
+                270 -- & -- 90
+                      /|\
+                     / | \
+                 225  180  135
+
+Then select a power level from one to three
+
+
+
+Created using Ruby, Active Record, and TTY::Prompt
