@@ -2,7 +2,7 @@
 
 CLI game created with Ruby, ActiveRecord, and TTY::Prompt
 
-![Badgers And Gyms demo](demo/grenade_throw.png)
+![Badgers And Gyms demo](demo/main_menu.png)
 
 ## Installing Badgers And Gyms
 
@@ -29,8 +29,6 @@ To use Badgers And Gyms, enter the following command into your terminal in the `
 ruby bin/run.rb
 ```
 
-![Main menu demo](demo/main_menu.png)
-
 ## How To Play
 
 The badger apocalypse is upon you
@@ -45,11 +43,16 @@ Throw grenades to kill the badgers
 Save your bullets for close-range combat
 
 To throw a grenade, first select the direction of the throw
-represented by degrees relative to your position:
+represented by degrees relative to your position and then select a power level from one to three
 
-![Grenade throw angles demo](demo/grenade_angle.png)
+Angle menu:
 
-Then select a power level from one to three
+![Grenade throw angle menu demo](demo/grenade_angle.png)
+
+
+Grenade throw animation:
+
+![Grenade throw demo](demo/grenade_throw.png)
 
 ![Grenade explosion demo](demo/grenade_explosion.png)
 
