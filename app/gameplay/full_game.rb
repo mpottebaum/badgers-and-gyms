@@ -3,8 +3,7 @@ def full_game
 
     instructions
 
-    game = Game.create(score: 0)
-    game.lost = false
+    game = Game.new(0)
     user = User.new
     num_badgers = 2
 
@@ -39,7 +38,7 @@ def enter_name(game)
     prompt = prompt_instance
     prompt.say("You got a high score!")
     name = prompt.ask("Enter your name")
-    game.update(user_name: name.upcase)
+    game.user_name = name.upcase
 end
 
 def display_high_scores

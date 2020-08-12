@@ -1,5 +1,16 @@
-class Game < ActiveRecord::Base
-    attr_accessor :turn, :lights_off_turn, :lost
+class Game
+    attr_accessor :user_name, :score, :turn, :lights_off_turn, :lost
+    @@all = []
+
+    def initialize(score)
+        self.score = score
+        self.lost = false
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
 
     def start
         self.turn = 0

@@ -1,8 +1,18 @@
 require_relative "movement.rb"
 
-class Badger < ActiveRecord::Base
+class Badger
     include Movement
-    attr_accessor :alive, :pace, :killer
+    attr_accessor :name, :alive, :pace, :killer
+    @@all = []
+
+    def initialize(name)
+        self.name = name
+        @@all << self
+    end
+
+    def self.all
+        @@all
+    end
 
     def self.generate_badgers(num_badgers)
         @@current_badgers = self.all.sample(num_badgers)
